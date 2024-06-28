@@ -2885,13 +2885,14 @@ bool FixedwingPositionControl::checkLandingAbortBitMask(const uint8_t automatic_
 {
 	// landing abort status contains a manual criterion at abort_status==1, need to subtract 2 to directly compare
 	// to automatic criteria bits from the parameter FW_LND_ABORT
-	if (landing_abort_criterion <= 1) {
-		return false;
-	}
+	// if (landing_abort_criterion <= 1) {
+	// 	return false;
+	// }
 
-	landing_abort_criterion -= 2;
+	// landing_abort_criterion -= 2;
 
-	return ((1 << landing_abort_criterion) & automatic_abort_criteria_bitmask) == (1 << landing_abort_criterion);
+	// return ((1 << landing_abort_criterion) & automatic_abort_criteria_bitmask) == (1 << landing_abort_criterion);
+	return false;
 }
 
 void FixedwingPositionControl::publishLocalPositionSetpoint(const position_setpoint_s &current_waypoint)
